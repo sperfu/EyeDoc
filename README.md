@@ -13,7 +13,7 @@
 
 ## ✨ Recent News
 
-- [6/21/2024] We have upgraded o
+- [6/21/2024] We have upgraded a web-based interface for users to use.
 - [2/18/2024] The first version of the model was released.
 
 ## ⚡ Introduction
