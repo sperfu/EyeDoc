@@ -18,8 +18,8 @@ DEFAULT_USERNAME = "admin"
 DEFAULT_PASSWORD = "admin123"
 
 # Set your OpenAI API key
-os.environ["OPENAI_API_KEY"] = "sk-rqxnZZBuO6HqobkNBd3aCf4082E04bE5B9C60eC468B25f03"
-os.environ["OPENAI_BASE_URL"] = "https://api.xiaoai.plus/v1"
+os.environ["OPENAI_API_KEY"] = "your-api-key"
+os.environ["OPENAI_BASE_URL"] = "your_url" ## could be comment
 
 client = OpenAI()
 VERSION = 0.1
@@ -46,13 +46,13 @@ if 'logged_in' not in st.session_state:
 
 if 'past' not in st.session_state:
     st.session_state.past = {
-        "ParaSeeds-chat农业大模型对话": [],
+        
         "EyeDoc-chat 眼科医生": []
     }
 
 if 'generated' not in st.session_state:
     st.session_state.generated = {
-        "ParaSeeds-chat农业大模型对话": [],
+        
         "EyeDoc-chat 眼科医生": []
     }
 
@@ -139,8 +139,8 @@ def on_input_change_eyedoc_tinnyllama(generate):
 
 def on_btn_click():
     current_page = st.session_state.selected_page
-    del st.session_state.past[:]
-    del st.session_state.generated[:]
+    st.session_state.past[current_page] = []
+    st.session_state.generated[current_page] = []
 
 def login_page():
     with st.form("login_form"):
@@ -158,25 +158,7 @@ def login_page():
             else:
                 st.error("用户名或密码错误，请重新输入。")
 
-def chat_page():
-    st.title("ParaSeeds-chat placeholder")
-    current_page = "ParaSeeds-chat农业大模型对话"
-    chat_placeholder = st.empty()
 
-    with chat_placeholder.container():    
-        for i in range(len(st.session_state['generated'][current_page])):                
-            message(st.session_state['past'][current_page][i], is_user=True, key=f"{i}_user_{current_page}")
-            message(
-                st.session_state['generated'][current_page][i]['data'], 
-                key=f"{i}_{current_page}", 
-                allow_html=True,
-                is_table=True if st.session_state['generated'][current_page][i]['type']=='table' else False
-            )
-    
-        st.button("Clear message", on_click=on_btn_click)
-
-    with st.container():
-        st.text_input("User Input:", on_change=on_input_change, key="user_input")
 
 def chat_page_eyedoc(generate):
     st.title("EyeDoc-chat placeholder")
@@ -203,19 +185,16 @@ def chat_page_eyedoc(generate):
 def main_page(generate):
     is_lite = "lite" in sys.argv
     st.set_page_config(
-        "AI4Bread-chat WebUI",
+        "EyeDoc-chat WebUI",
         os.path.join("st_chat_img", "images.png"),
         initial_sidebar_state="expanded",
         menu_items={
-            'About': f"""欢迎使用 AI4Bread-chat WebUI {VERSION}！"""
+            'About': f"""欢迎使用 EyeDoc-chat WebUI {VERSION}！"""
         }
     )
     #pdb.set_trace()
     pages = {
-        "ParaSeeds-chat农业大模型对话": {
-            "icon": "chat",
-            "func": chat_page,
-        },
+        
         "EyeDoc-chat 眼科医生": {
             "icon": "hdd-stack",
             "func": lambda: chat_page_eyedoc(generate),
@@ -254,7 +233,7 @@ if __name__ == "__main__":
     generate = Generate(tinyllama_knowledge_param)
     if st.session_state.logged_in:
         if 'selected_page' not in st.session_state:
-            st.session_state.selected_page = "ParaSeeds-chat农业大模型对话"  # 默认页面
+            st.session_state.selected_page = "EyeDoc-chat 眼科医生"  # 默认页面
         main_page(generate)
     else:
         login_page()

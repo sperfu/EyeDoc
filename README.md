@@ -13,6 +13,7 @@
 
 ## ✨ Recent News
 
+- [6/21/2024] We have upgraded o
 - [2/18/2024] The first version of the model was released.
 
 ## ⚡ Introduction
