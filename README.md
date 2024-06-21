@@ -41,23 +41,23 @@ rouge_chinese
 nltk
 ```
 
-## 💭 Prepare
+## 💭 Preparation
 
-EyeDoc基于大语言模型微调而来，在训练之前请先配置或下载大语言模型基座。
+EyeDoc is fine-tuned based on a large language model. Before training, please configure or download the base large language model.
 
-| 参数规模 | 大语言模型名称                                               |
-| -------- | ------------------------------------------------------------ |
-| 1B       | [TinyLlama](https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0) |
-| 3B       | [bloom-zh-3b-chat](https://huggingface.co/ikala/bloom-zh-3b-chat) |
-| 7B       | [Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) |
+| Parameter Scale | Large Language Model Name                                     |
+| ----------------| --------------------------------------------------------------|
+| 1B              | [TinyLlama](https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0) |
+| 3B              | [bloom-zh-3b-chat](https://huggingface.co/ikala/bloom-zh-3b-chat) |
+| 7B              | [Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) |
 
-## ⚒️ Train
+## ⚒️ Training
 
-###  1. QA Train
+### 1. QA Training
 
 ```python
 python A_train.py
-# 更多模型超参数调整见main函数内
+# For more model hyperparameter adjustments, see the main function
 ```
 
 
@@ -65,21 +65,21 @@ python A_train.py
 
 ```python
 python A_train_doc_specific.py
-# 更多模型超参数调整见main函数内
+# For more model hyperparameter adjustments, see the main function
 ```
 
 ##  🧐 Evaluation
 
 ```python
 python A_evaluate.py
-# 更多模型超参数调整见main函数内
+# For more model hyperparameter adjustments, see the main function
 ```
 
 ## 🚀 Generate
 
 ```
-python A_generate.py	# 模型响应生成
-python A_Flask_web.py	# 模型api接口调用
+python A_generate.py	# # Model response generation
+python A_Flask_web.py	# Model API interface call
 ```
 
 ## 🌐 Deployment
