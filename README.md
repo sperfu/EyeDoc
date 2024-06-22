@@ -31,7 +31,15 @@ EyeDoc is the first open-source large language model focused on ophthalmic disea
 
 ## 🤖 Installation
 
+Use conda to create a new virtual environment with Python 3.9.0. Run the following command:
+
 ```
+git clone https://github.com/sperfu/EyeDoc
+conda create --name EyeDoc python=3.9.0
+conda activate EyeDoc
+pip install -r requirements.txt
+
+<!-- ```
 python==3.9.0
 torch==2.1.2
 transformers==4.35.2
@@ -40,7 +48,7 @@ accelerate==0.25.0
 bitsandbytes==0.42.0
 rouge_chinese
 nltk
-```
+``` -->
 
 ## 💭 Preparation
 
