@@ -93,7 +93,7 @@ First, ensure you have Python installed (preferably Python 3.9). Then, install S
 
 ```bash
 pip install streamlit
-pip install -r requirements.txt  # Ensure all dependencies listed in the requirements file are installed
+pip install -r requirements.txt  # Ensure all dependencies listed in the requirements file are installed 
 ```
 
 ### 2. Start the Streamlit service
