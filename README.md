@@ -39,7 +39,7 @@ git clone https://github.com/sperfu/EyeDoc
 conda create --name EyeDoc python=3.9.0
 conda activate EyeDoc
 pip install -r requirements.txt
-
+```
 <!-- ```
 python==3.9.0
 torch==2.1.2
