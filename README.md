@@ -93,7 +93,7 @@ python A_Flask_web.py	# Model API interface call
 ```
 
 ## 🌐 Deployment
-
+![Web UI](assets/img/image.png)
 To deploy the EyeDoc model using Streamlit, follow these steps:
 
 ### 1. Install the required environment
